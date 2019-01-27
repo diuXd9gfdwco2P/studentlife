@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "643366188031",
+    "firebase_url": "https://studentlife-b02e2.firebaseio.com",
+    "project_id": "studentlife-b02e2",
+    "storage_bucket": "studentlife-b02e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643366188031:android:79eac76a01f9c7fb",
+        "android_client_info": {
+          "package_name": "com.yanis.studentlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643366188031-cc2f63hkr8t13gj3nap9gs0f3u1ag97g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yanis.studentlife",
+            "certificate_hash": "276319f6a7caf4316dbcfc4c839018dd2e3fa771"
+          }
+        },
+        {
+          "client_id": "643366188031-jbcofor5tl3kn4l2kl0icn2jiee0ir8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTU0QeC5OrdRzuhsvHowxksNNY1YfbGBk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643366188031-jbcofor5tl3kn4l2kl0icn2jiee0ir8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
