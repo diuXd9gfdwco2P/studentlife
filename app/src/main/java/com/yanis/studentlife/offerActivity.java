@@ -5,23 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class HomeActivity extends AppCompatActivity {
+public class offerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-    }
-    @Override
-    public void onBackPressed() {
-        Bundle bundle = getIntent().getExtras();
-
-        if (bundle.getString("LoginActivity").equals(LoginActivity.class.toString())) {
-            return;
-        }
-        else{
-            super.onBackPressed();
-        }
+        setContentView(R.layout.activity_offer);
     }
     public void btn_home_Click(View view){
         Intent i =new Intent(this,HomeActivity.class);
