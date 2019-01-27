@@ -10,4 +10,15 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
     }
+    @Override
+    public void onBackPressed() {
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle.getString("LoginActivity").equals(LoginActivity.class.toString())) {
+            return;
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
 }
