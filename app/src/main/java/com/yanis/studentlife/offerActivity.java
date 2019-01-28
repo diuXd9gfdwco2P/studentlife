@@ -12,6 +12,10 @@ public class offerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offer);
     }
+    public void btn_plus_Click(View view){
+        Intent i =new Intent(this,AddOfferActivity.class);
+        startActivity(i);
+    }
     public void btn_home_Click(View view){
         Intent i =new Intent(this,HomeActivity.class);
         startActivity(i);

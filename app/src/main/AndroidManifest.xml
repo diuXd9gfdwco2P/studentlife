@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_student_life_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".planActivity"></activity>
+        <activity android:name=".AddOfferActivity"></activity>
+        <activity android:name=".AddPlanActivity" />
+        <activity android:name=".AddEventActivity" />
+        <activity android:name=".planActivity" />
         <activity android:name=".offerActivity" />
         <activity android:name=".evenmentActivity" />
         <activity android:name=".HomeActivity" />

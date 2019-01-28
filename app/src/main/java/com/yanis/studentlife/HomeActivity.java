@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
     public void btn_home_Click(View view){
         Intent i =new Intent(this,HomeActivity.class);
         startActivity(i);

@@ -12,6 +12,10 @@ public class planActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
     }
+    public void btn_plus_Click(View view){
+        Intent i =new Intent(this,AddPlanActivity.class);
+        startActivity(i);
+    }
 
     public void btn_home_Click(View view){
         Intent i =new Intent(this,HomeActivity.class);
