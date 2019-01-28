@@ -38,7 +38,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="462dp"
+        android:layout_height="494dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
@@ -70,10 +70,18 @@
             android:inputType="textPersonName"
             android:text="Lieu du plan" />
 
-        <CalendarView
-            android:id="@+id/calendarEventCreate4"
+        <EditText
+            android:id="@+id/txtNumberPhonePlanCreate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Numéro de téléphone" />
+
+        <CalendarView
+            android:id="@+id/calendarPlanCreate"
+            android:layout_width="match_parent"
+            android:layout_height="305dp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
