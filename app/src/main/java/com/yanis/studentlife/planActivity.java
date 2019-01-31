@@ -1,46 +1,45 @@
 package com.yanis.studentlife;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class planActivity extends AppCompatActivity {
-    final FirebaseDatabase database=FirebaseDatabase.getInstance();
-    DatabaseReference ref=database.getReference().getRoot().child("test");
 
 
 
+    DataBaseHelperPlan myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plan);
+        setContentView(R.layout.activity_evenment);
+        myDb=new DataBaseHelperPlan(this);
+
+        Cursor res=myDb.getAllData();
+        if(res.getCount()==0){
+            showMessage("Plans","Aucun plan n'est disponible");
+        }
+        StringBuffer buffer =new StringBuffer();
+        while (res.moveToNext()){
+            buffer.append("ID : "+res.getString(0)+"\n");
+            buffer.append("name : "+res.getString(1)+"\n");
+            buffer.append("Address : "+res.getString(2)+"\n");
+            buffer.append("Phone : "+res.getString(3)+"\n");
+            buffer.append("Date : "+res.getString(4)+"\n\n\n");
+        }
+        showMessage("Plan",buffer.toString());
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        ref.setValue("Hello, World!");
-        // Attach a listener to read the data at our posts reference
-        /*ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Plan plan = dataSnapshot.getValue(Plan.class);
-                System.out.println(plan.description);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });*/
+    public void showMessage(String title,String message){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 
     public void btn_plus_Click(View view){

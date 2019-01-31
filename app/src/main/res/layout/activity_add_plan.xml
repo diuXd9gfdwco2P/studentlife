@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
+        android:layout_width="122dp"
+        android:layout_height="94dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -28,6 +28,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/my_button"
+        android:onClick="addEvent"
         android:text="Créer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="494dp"
+        android:layout_height="298dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
@@ -55,14 +56,6 @@
             android:text="Nom du plan" />
 
         <EditText
-            android:id="@+id/txtDescriptionPlanCreate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Description du plan" />
-
-        <EditText
             android:id="@+id/txtPlacePlanCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,13 +68,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Numéro de téléphone" />
+            android:inputType="phone"
+            android:text="Phone" />
 
-        <CalendarView
-            android:id="@+id/calendarPlanCreate"
+        <EditText
+            android:id="@+id/txtDatePlanCreate"
             android:layout_width="match_parent"
-            android:layout_height="305dp" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Date" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
