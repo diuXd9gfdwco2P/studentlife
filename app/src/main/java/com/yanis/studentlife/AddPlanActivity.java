@@ -18,10 +18,10 @@ public class AddPlanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_plan);
 
         myDb=new DataBaseHelperPlan(this);
-        name=(EditText)findViewById(R.id.txtNameEventCreate);
-        address=(EditText)findViewById(R.id.txtPlaceEventCreate);
-        phone=(EditText)findViewById(R.id.txtNumberPhoneEventCreate);
-        date=(EditText)findViewById(R.id.txtDateEventCreate);
+        name=(EditText)findViewById(R.id.txtNamePlanCreate);
+        address=(EditText)findViewById(R.id.txtPlacePlanCreate);
+        phone=(EditText)findViewById(R.id.txtNumberPhonePlanCreate);
+        date=(EditText)findViewById(R.id.txtDatePlanCreate);
     }
 
     public void addEvent(View view){

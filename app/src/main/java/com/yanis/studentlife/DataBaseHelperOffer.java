@@ -6,12 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DataBaseHelperEvent extends SQLiteOpenHelper {
+public class DataBaseHelperOffer extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="evenement.db";
-    public static final String TABLE_NAME="evenement_table";
+
+    public static final String TABLE_NAME="offer_table";
     public static final String COL_1="ID";
     public static final String COL_2="NAME";
-
     public static final String COL_3="ADDRESS";
     public static final String COL_4="PHONE";
     public static final String COL_5="DATE";
@@ -20,7 +20,7 @@ public class DataBaseHelperEvent extends SQLiteOpenHelper {
 
 
 
-    public DataBaseHelperEvent(Context context) {
+    public DataBaseHelperOffer(Context context) {
         super(context, DATABASE_NAME, null, 5);
     }
 
