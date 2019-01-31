@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DataBaseHelper extends SQLiteOpenHelper {
+public class DataBaseHelperEvent extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="evenement.db";
     public static final String TABLE_NAME="evenement_table";
     public static final String COL_1="ID";
@@ -20,9 +20,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public DataBaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, 1);
-        //SQLiteDatabase db=this.getWritableDatabase();
+    public DataBaseHelperEvent(Context context) {
+        super(context, DATABASE_NAME, null, 3);
     }
 
     @Override

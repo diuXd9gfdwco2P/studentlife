@@ -11,12 +11,12 @@ import android.widget.Toast;
 public class AddEventActivity extends AppCompatActivity {
     EditText name,address,phone,date;
 
-    DataBaseHelper myDb;
+    DataBaseHelperEvent myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
-        myDb=new DataBaseHelper(this);
+        myDb=new DataBaseHelperEvent(this);
         name=(EditText)findViewById(R.id.txtNameEventCreate);
         address=(EditText)findViewById(R.id.txtPlaceEventCreate);
         phone=(EditText)findViewById(R.id.txtNumberPhoneEventCreate);

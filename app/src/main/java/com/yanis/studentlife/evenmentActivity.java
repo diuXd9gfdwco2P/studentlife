@@ -10,12 +10,12 @@ import android.view.View;
 
 
 public class evenmentActivity extends AppCompatActivity {
-    DataBaseHelper myDb;
+    DataBaseHelperEvent myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evenment);
-        myDb=new DataBaseHelper(this);
+        myDb=new DataBaseHelperEvent(this);
         Cursor res=myDb.getAllData();
         if(res.getCount()==0){
             showMessage("Evenements","Aucun évenement n'est disponible");
