@@ -1,6 +1,7 @@
 package com.yanis.studentlife;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +58,15 @@ public class evenmentActivity extends AppCompatActivity {
     public void btn_plan_Click(View view){
         Intent i =new Intent(this,planActivity.class);
         startActivity(i);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences prefs = getSharedPreferences("X", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("lastActivity", getClass().getName());
+        editor.commit();
     }
 
 }

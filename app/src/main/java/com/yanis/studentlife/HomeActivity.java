@@ -1,6 +1,7 @@
 package com.yanis.studentlife;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,5 +40,14 @@ public class HomeActivity extends AppCompatActivity {
     public void btn_plan_Click(View view){
         Intent i =new Intent(this,planActivity.class);
         startActivity(i);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences prefs = getSharedPreferences("X", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("lastActivity", getClass().getName());
+        editor.commit();
     }
 }

@@ -21,7 +21,7 @@ public class DataBaseHelperEvent extends SQLiteOpenHelper {
 
 
     public DataBaseHelperEvent(Context context) {
-        super(context, DATABASE_NAME, null, 5);
+        super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
