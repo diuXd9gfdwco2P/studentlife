@@ -38,7 +38,7 @@ public class AddOfferActivity extends AppCompatActivity {
         addOffer.put("address",address.getText().toString());
         addOffer.put("phone",phone.getText().toString());
         addOffer.put("date",date.getText().toString());
-        db.collection("event").add(addOffer).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        db.collection("Offre").add(addOffer).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(AddOfferActivity.this,"Offre ajoutée avec succès "+documentReference.getId(),Toast.LENGTH_LONG).show();
