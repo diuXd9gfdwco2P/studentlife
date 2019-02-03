@@ -14,6 +14,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class HomeActivity extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
 
@@ -33,6 +38,36 @@ public class HomeActivity extends AppCompatActivity {
                             }
                         } else {
                             Log.w("READ_EVENT", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+        db.collection("Offer")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("READ_Offer", document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.w("READ_Offer", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+        db.collection("plan")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("READ_Plan", document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.w("READ_Plan", "Error getting documents.", task.getException());
                         }
                     }
                 });
