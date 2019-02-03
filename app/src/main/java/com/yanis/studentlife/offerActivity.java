@@ -48,10 +48,6 @@ public class offerActivity extends AppCompatActivity {
         Intent i =new Intent(this,evenmentActivity.class);
         startActivity(i);
     }
-    public void btn_offer_Click(View view){
-        Intent i =new Intent(this,offerActivity.class);
-        startActivity(i);
-    }
     public void btn_plan_Click(View view){
         Intent i =new Intent(this,planActivity.class);
         startActivity(i);

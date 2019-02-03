@@ -71,8 +71,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="@drawable/plan"
-            android:onClick="btn_plan_Click" />
+            android:background="@drawable/plan" />
 
     </LinearLayout>
 

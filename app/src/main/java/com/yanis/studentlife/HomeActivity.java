@@ -85,10 +85,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    public void btn_home_Click(View view){
-        Intent i =new Intent(this,HomeActivity.class);
-        startActivity(i);
-    }
     public void btn_evenment_Click(View view){
         Intent i =new Intent(this,evenmentActivity.class);
         startActivity(i);

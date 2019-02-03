@@ -47,8 +47,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="@drawable/evenment"
-            android:onClick="btn_evenment_Click" />
+            android:background="@drawable/evenment" />
 
         <Button
             android:id="@+id/btn_offer"
