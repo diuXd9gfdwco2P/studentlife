@@ -19,7 +19,7 @@ public class offerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evenment);
+        setContentView(R.layout.activity_offer);
         db.collection("Offer")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
