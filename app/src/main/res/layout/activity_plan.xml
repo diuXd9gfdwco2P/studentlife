@@ -50,7 +50,7 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/evenment"
-            android:onClick="btn_evenment_Click" />
+            android:onClick="btn_event_Click"/>
 
         <Button
             android:id="@+id/btn_offer"

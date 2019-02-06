@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,7 +30,7 @@ public class AddEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_event);
     }
     public void addEvent(View view){
-        final Intent i = new Intent(this,evenmentActivity.class);
+        final Intent i = new Intent(this, EventActivity.class);
         name=(EditText)findViewById(R.id.txtNameEventCreate);
         address=(EditText)findViewById(R.id.txtPlaceEventCreate);
         phone=(EditText)findViewById(R.id.txtNumberPhoneEventCreate);

@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends SharedMainActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
 
     @Override
@@ -85,18 +85,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    public void btn_evenment_Click(View view){
-        Intent i =new Intent(this,evenmentActivity.class);
-        startActivity(i);
-    }
-    public void btn_offer_Click(View view){
-        Intent i =new Intent(this,offerActivity.class);
-        startActivity(i);
-    }
-    public void btn_plan_Click(View view){
-        Intent i =new Intent(this,planActivity.class);
-        startActivity(i);
-    }
     @Override
     protected void onPause() {
         super.onPause();

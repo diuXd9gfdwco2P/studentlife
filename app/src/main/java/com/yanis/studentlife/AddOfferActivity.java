@@ -30,7 +30,7 @@ public class AddOfferActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_offer);
     }
     public void addOffer(View view){
-        final Intent i = new Intent(this,offerActivity.class);
+        final Intent i = new Intent(this, OfferActivity.class);
         name=(EditText)findViewById(R.id.txtNameOfferCreate);
         address=(EditText)findViewById(R.id.txtPlaceOfferCreate);
         phone=(EditText)findViewById(R.id.txtNumberPhoneOfferCreate);

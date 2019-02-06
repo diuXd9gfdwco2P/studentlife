@@ -13,7 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class offerActivity extends AppCompatActivity {
+public class OfferActivity extends SharedMainActivity {
 
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
@@ -36,20 +36,9 @@ public class offerActivity extends AppCompatActivity {
                     }
                 });
     }
+
     public void btn_plus_Click(View view){
         Intent i =new Intent(this,AddOfferActivity.class);
-        startActivity(i);
-    }
-    public void btn_home_Click(View view){
-        Intent i =new Intent(this,HomeActivity.class);
-        startActivity(i);
-    }
-    public void btn_evenment_Click(View view){
-        Intent i =new Intent(this,evenmentActivity.class);
-        startActivity(i);
-    }
-    public void btn_plan_Click(View view){
-        Intent i =new Intent(this,planActivity.class);
         startActivity(i);
     }
 }

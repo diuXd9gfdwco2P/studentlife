@@ -1,6 +1,6 @@
 package com.yanis.studentlife;
 
-public class offer {
+public class Offer {
     private String id;
     private String name;
     private String place;
@@ -27,7 +27,7 @@ public class offer {
         return phone;
     }
 
-    public offer(String name, String place, String date, String phone) {
+    public Offer(String name, String place, String date, String phone) {
         this.name = name;
         this.place = place;
         this.date = date;

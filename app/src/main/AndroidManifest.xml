@@ -16,8 +16,8 @@
         <activity android:name=".AddPlanActivity" />
         <activity android:name=".AddEventActivity" />
         <activity android:name=".planActivity" />
-        <activity android:name=".offerActivity" />
-        <activity android:name=".evenmentActivity" />
+        <activity android:name=".OfferActivity" />
+        <activity android:name=".EventActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
