@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -22,6 +23,8 @@ public class AddPlanActivity extends AppCompatActivity {
 
     EditText name,address,phone,date;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
+    String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class AddPlanActivity extends AppCompatActivity {
         addPlan.put("address",address.getText().toString());
         addPlan.put("phone",phone.getText().toString());
         addPlan.put("date",date.getText().toString());
+        addPlan.put("userID",currentuser);
         db.collection("plan").add(addPlan).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
