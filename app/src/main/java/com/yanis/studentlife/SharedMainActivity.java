@@ -12,8 +12,10 @@ public abstract class SharedMainActivity extends AppCompatActivity {
      * @param view view to display.
      */
     public void btn_home_Click(View view){
-        Intent i =new Intent(this,HomeActivity.class);
-        startActivity(i);
+        if(!this.getClass().getName().equals(HomeActivity.class.getName())) {
+            Intent i = new Intent(this, HomeActivity.class);
+            startActivity(i);
+        }
     }
 
     /**
@@ -22,8 +24,10 @@ public abstract class SharedMainActivity extends AppCompatActivity {
      * @param view offer to display.
      */
     public void btn_event_Click(View view){
-        Intent i =new Intent(this,evenmentActivity.class);
-        startActivity(i);
+        if(!this.getClass().getName().equals(evenmentActivity.class.getName())) {
+            Intent i = new Intent(this, evenmentActivity.class);
+            startActivity(i);
+        }
     }
 
     /**
@@ -32,8 +36,10 @@ public abstract class SharedMainActivity extends AppCompatActivity {
      * @param view offer to display.
      */
     public void btn_offer_Click(View view){
-        Intent i =new Intent(this,offerActivity.class);
-        startActivity(i);
+        if(!this.getClass().getName().equals(offerActivity.class.getName())) {
+            Intent i = new Intent(this, offerActivity.class);
+            startActivity(i);
+        }
     }
 
     /**
@@ -42,8 +48,10 @@ public abstract class SharedMainActivity extends AppCompatActivity {
      * @param view view to display.
      */
     public void btn_plan_Click(View view){
-        Intent i =new Intent(this,planActivity.class);
-        startActivity(i);
+        if(!this.getClass().getName().equals(planActivity.class.getName())) {
+            Intent i = new Intent(this, planActivity.class);
+            startActivity(i);
+        }
     }
 
 }
