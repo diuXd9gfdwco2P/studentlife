@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -22,11 +23,13 @@ import java.util.Map;
 public class AddEventActivity extends AppCompatActivity {
     EditText name,address,phone,date;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
+    String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
+        Log.i("user", "onCreate: "+currentuser);
     }
     public void addEvent(View view){
         final Intent i = new Intent(this,evenmentActivity.class);
@@ -39,6 +42,7 @@ public class AddEventActivity extends AppCompatActivity {
         addEvent.put("address",address.getText().toString());
         addEvent.put("phone",phone.getText().toString());
         addEvent.put("date",date.getText().toString());
+        addEvent.put("userID",currentuser);
         db.collection("event").add(addEvent).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
