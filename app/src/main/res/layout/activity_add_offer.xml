@@ -52,32 +52,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Nom de l'offre" />
+            android:hint="Nom de l'offre"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtPlaceOfferCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Entreprise" />
+            android:hint="Entreprise de l'offre"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtNumberPhoneOfferCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:text="Phone" />
+            android:hint="Téléphone"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/txtDateOfferCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="Date" />
+            android:hint="Date"
+            android:inputType="date" />
 
     </LinearLayout>
 

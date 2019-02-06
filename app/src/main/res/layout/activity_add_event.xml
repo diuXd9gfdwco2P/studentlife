@@ -52,32 +52,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name event" />
+            android:hint="Nom de l'évènement"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtPlaceEventCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="place event" />
+            android:hint="Place de l'évènement"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtNumberPhoneEventCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:text="Phone" />
+            android:hint="Téléphone"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/txtDateEventCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="Date" />
+            android:hint="Date"
+            android:inputType="date" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

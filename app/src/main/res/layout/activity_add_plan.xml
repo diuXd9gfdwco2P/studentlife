@@ -53,32 +53,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Nom du plan" />
+            android:hint="Nom du plan"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtPlacePlanCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Lieu du plan" />
+            android:hint="Place du plan"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtNumberPhonePlanCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:text="Phone" />
+            android:hint="Téléphone"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/txtDatePlanCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="Date" />
+            android:hint="Date"
+            android:inputType="date" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
