@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
@@ -21,57 +23,34 @@ import java.util.Map;
 
 public class HomeActivity extends SharedMainActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
-
+    RecyclerView recyclerView;
+    HomeAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        db.collection("event")
+
+        recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewHome);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        db.collection("home")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-
+                            List<evenement>list=new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("READ_EVENT", document.getId() + " => " + document.getData());
+                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone")));
                             }
+                            adapter=new HomeAdapter(HomeActivity.this,list);
+                            recyclerView.setAdapter(adapter);
                         } else {
                             Log.w("READ_EVENT", "Error getting documents.", task.getException());
                         }
                     }
                 });
-        db.collection("Offer")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("READ_Offer", document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.w("READ_Offer", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-        db.collection("plan")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("READ_Plan", document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.w("READ_Plan", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-
     }
     @Override
     public void onBackPressed() {

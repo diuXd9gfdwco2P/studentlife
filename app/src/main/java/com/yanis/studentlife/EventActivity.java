@@ -34,7 +34,7 @@ public class EventActivity extends SharedMainActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        
         db.collection("event")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
