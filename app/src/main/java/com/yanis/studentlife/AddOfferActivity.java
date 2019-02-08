@@ -54,6 +54,19 @@ public class AddOfferActivity extends AppCompatActivity {
                         Toast.makeText(AddOfferActivity.this,"Offre non ajoutée!!!veuillez réessayer",Toast.LENGTH_LONG).show();
                     }
                 });
+        db.collection("home").add(addOffer).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(AddOfferActivity.this,"Offre ajoutée avec succès "+documentReference.getId(),Toast.LENGTH_LONG).show();
+                startActivity(i);
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AddOfferActivity.this,"Offre non ajoutée!!!veuillez réessayer",Toast.LENGTH_LONG).show();
+                    }
+                });
 
     }
 }

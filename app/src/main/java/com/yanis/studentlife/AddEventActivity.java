@@ -54,6 +54,18 @@ public class AddEventActivity extends AppCompatActivity {
                         Toast.makeText(AddEventActivity.this,"Evenement non ajouté!!!veuillez réessayer",Toast.LENGTH_LONG).show();
                     }
                 });
-
+        db.collection("home").add(addEvent).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(AddEventActivity.this,"Evenement ajouté avec succès "+documentReference.getId(),Toast.LENGTH_LONG).show();
+                startActivity(i);
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AddEventActivity.this,"Evenement non ajouté!!!veuillez réessayer",Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 }
