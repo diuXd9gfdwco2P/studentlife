@@ -39,7 +39,7 @@ public class AddOfferActivity extends AppCompatActivity {
         addOffer.put("name",name.getText().toString());
         addOffer.put("address",address.getText().toString());
         addOffer.put("phone",phone.getText().toString());
-        addOffer.put("date",date.getText().toString());
+        addOffer.put("date",date.getText().toString().replaceAll("/","").replaceAll("-",""));
         addOffer.put("userID",currentuser);
         db.collection("Offre").add(addOffer).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

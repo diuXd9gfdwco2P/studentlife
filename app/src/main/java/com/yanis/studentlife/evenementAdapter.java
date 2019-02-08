@@ -33,7 +33,7 @@ public class evenementAdapter extends RecyclerView.Adapter<evenementAdapter.even
 
         holder.textViewName.setText(evenement.getName());
         holder.textViewPlace.setText(evenement.getPlace());
-        holder.textViewDate.setText(evenement.getDate());
+        holder.textViewDate.setText(evenement.getDate().substring(0,4)+"/"+evenement.getDate().substring(4,6)+"/"+evenement.getDate().substring(6,8));
         holder.textViewPhone.setText(evenement.getPhone());
 
 
