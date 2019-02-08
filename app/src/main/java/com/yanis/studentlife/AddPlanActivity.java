@@ -41,7 +41,7 @@ public class AddPlanActivity extends AppCompatActivity {
         addPlan.put("name",name.getText().toString());
         addPlan.put("address",address.getText().toString());
         addPlan.put("phone",phone.getText().toString());
-        addPlan.put("date",date.getText().toString());
+        addPlan.put("date",date.getText().toString().replaceAll("/","").replaceAll("-",""));
         addPlan.put("userID",currentuser);
         db.collection("plan").add(addPlan).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

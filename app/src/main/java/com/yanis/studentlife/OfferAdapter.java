@@ -32,7 +32,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         offer offer=OfferList.get(i);
         offerViewHolder.textViewName.setText(offer.getName());
         offerViewHolder.textViewPlace.setText(offer.getPlace());
-        offerViewHolder.textViewDate.setText(offer.getDate());
+        offerViewHolder.textViewDate.setText(offer.getDate().substring(0,4)+"/"+offer.getDate().substring(4,6)+"/"+offer.getDate().substring(6,8));
         offerViewHolder.textViewPhone.setText(offer.getPhone());
     }
 

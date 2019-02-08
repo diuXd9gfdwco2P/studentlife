@@ -33,7 +33,7 @@ public class planAdapter extends RecyclerView.Adapter<planAdapter.planViewHolder
 
         planViewHolder.textViewName.setText(plan.getName());
         planViewHolder.textViewPlace.setText(plan.getPlace());
-        planViewHolder.textViewDate.setText(plan.getDate());
+        planViewHolder.textViewDate.setText(plan.getDate().substring(0,4)+"/"+plan.getDate().substring(4,6)+"/"+plan.getDate().substring(6,8));
         planViewHolder.textViewPhone.setText(plan.getPhone());
     }
 

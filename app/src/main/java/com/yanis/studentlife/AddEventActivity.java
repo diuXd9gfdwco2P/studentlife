@@ -39,7 +39,7 @@ public class AddEventActivity extends AppCompatActivity {
         addEvent.put("name",name.getText().toString());
         addEvent.put("address",address.getText().toString());
         addEvent.put("phone",phone.getText().toString());
-        addEvent.put("date",date.getText().toString());
+        addEvent.put("date",date.getText().toString().replaceAll("/","").replaceAll("-",""));
         addEvent.put("userID",currentuser);
         db.collection("event").add(addEvent).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
