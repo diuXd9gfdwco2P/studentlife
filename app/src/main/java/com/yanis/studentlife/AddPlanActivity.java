@@ -39,7 +39,7 @@ public class AddPlanActivity extends AppCompatActivity {
         addPlan.put("address",address.getText().toString());
         addPlan.put("phone",phone.getText().toString());
         addPlan.put("date",date.getText().toString());
-        db.collection("event").add(addPlan).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        db.collection("Plan").add(addPlan).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(AddPlanActivity.this,"Plan ajouté avec succès "+documentReference.getId(),Toast.LENGTH_LONG).show();

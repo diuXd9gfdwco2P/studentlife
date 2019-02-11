@@ -2,9 +2,9 @@ package com.yanis.studentlife;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
@@ -13,14 +13,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.google.firebase.messaging.RemoteMessage;
 
 public class HomeActivity extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
+    private static final String TAG = "MyActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,5 +106,19 @@ public class HomeActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("lastActivity", getClass().getName());
         editor.commit();
+    }
+
+    public void onMessageReceived(RemoteMessage remoteMessage){
+        Log.v(TAG,"From:"+ remoteMessage.getFrom());
+
+        if (remoteMessage.getData().size() > 0){
+            Log.d(TAG, "Message data paylaod:" + remoteMessage.getData());
+        }
+        if (remoteMessage.getNotification() != null){
+            Log.d(TAG,"Message Notification Body:" + remoteMessage.getNotification().getBody());
+        }
+
+
+
     }
 }

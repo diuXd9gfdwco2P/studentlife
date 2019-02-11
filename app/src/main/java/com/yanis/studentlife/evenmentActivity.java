@@ -58,6 +58,7 @@ public class evenmentActivity extends AppCompatActivity {
                 });
     }
 
+
     public void btn_plus_Click(View view){
         Intent i =new Intent(this,AddEventActivity.class);
         startActivity(i);

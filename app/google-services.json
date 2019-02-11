@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "643366188031-lqpva2jpl3isfakk0d56odr0glkfd3rj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yanis.studentlife",
+            "certificate_hash": "44305657c52c616738a688ce97d903a29cd35abf"
+          }
+        },
+        {
           "client_id": "643366188031-jbcofor5tl3kn4l2kl0icn2jiee0ir8n.apps.googleusercontent.com",
           "client_type": 3
         }
