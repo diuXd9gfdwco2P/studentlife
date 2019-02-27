@@ -11,7 +11,16 @@
         android:roundIcon="@mipmap/ic_student_life_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <receiver android:name=".EventAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/event_app_widget_info" />
+        </receiver>
+        <activity android:name=".MainActivity" />
         <activity android:name=".AddOfferActivity" />
         <activity android:name=".AddPlanActivity" />
         <activity android:name=".AddEventActivity" />

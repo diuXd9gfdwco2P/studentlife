@@ -36,7 +36,6 @@ public class EventActivity extends SharedMainActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        
         db.collection("event").orderBy("date", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -44,8 +43,16 @@ public class EventActivity extends SharedMainActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             List<evenement>list=new ArrayList<>();
+                            DataBaseEventHelper localDb = new DataBaseEventHelper(EventActivity.this);
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone"),document.getString("userID")));
+                                boolean isInserted = localDb.insertData(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone"));
+                                if(isInserted==true){
+                                    Log.i("INSERT_DATA","DATA inserted");
+                                }
+                                else{
+                                    Log.i("INSERT_DATA","DATA NOT    inserted");
+                                }
                             }
                             adapter=new evenementAdapter(EventActivity.this,list);
                             recyclerView.setAdapter(adapter);
