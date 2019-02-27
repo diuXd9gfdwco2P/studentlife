@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,12 +36,14 @@ public class AddEventActivity extends AppCompatActivity {
         address=(EditText)findViewById(R.id.txtPlaceEventCreate);
         phone=(EditText)findViewById(R.id.txtNumberPhoneEventCreate);
         date=(EditText)findViewById(R.id.txtDateEventCreate);
+        final String token;
+        token = FirebaseInstanceId.getInstance().getToken();
         final Map<String,Object> addEvent=new HashMap<>();
         addEvent.put("name",name.getText().toString());
         addEvent.put("address",address.getText().toString());
         addEvent.put("phone",phone.getText().toString());
         addEvent.put("date",date.getText().toString().replaceAll("/","").replaceAll("-",""));
-        addEvent.put("userID",currentuser);
+        addEvent.put("userID",token);
         db.collection("event").add(addEvent).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {

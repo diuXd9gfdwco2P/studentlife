@@ -1,0 +1,4 @@
+# Referenced at /home/epse/Documents/ESGI/Android/finaltp/studentlife/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:17
+-keep class android.support.multidex.MultiDexApplication { <init>(); }
+# Referenced at /home/epse/Documents/ESGI/Android/finaltp/studentlife/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:17
+-keep class android.support.v4.app.CoreComponentFactory { <init>(); }

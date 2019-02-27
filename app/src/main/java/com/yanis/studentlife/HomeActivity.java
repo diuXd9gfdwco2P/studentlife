@@ -1,14 +1,11 @@
 package com.yanis.studentlife;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,9 +15,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class HomeActivity extends SharedMainActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
@@ -43,7 +38,7 @@ public class HomeActivity extends SharedMainActivity {
                         if (task.isSuccessful()) {
                             List<evenement>list=new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone")));
+                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone"),document.getString("userID")));
                             }
                             adapter=new HomeAdapter(HomeActivity.this,list);
                             recyclerView.setAdapter(adapter);

@@ -23,7 +23,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     @Override
     public HomeAdapter.HomeViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater=LayoutInflater.from(mCtx);
-        View view=inflater.inflate(R.layout.card,null);
+        View view=inflater.inflate(R.layout.card_offer_plan,null);
         return new HomeAdapter.HomeViewHolder(view);
     }
 
