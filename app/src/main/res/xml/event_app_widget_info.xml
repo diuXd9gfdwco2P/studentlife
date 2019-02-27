@@ -2,5 +2,6 @@
     android:minWidth="144dip"
     android:minHeight="144dip"
     android:updatePeriodMillis="3600000"
+    android:resizeMode="horizontal|vertical"
     android:initialLayout="@layout/event_app_widget"
  />

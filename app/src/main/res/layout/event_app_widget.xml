@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_weight="50"
-            android:text="Prec." />
+            android:text="Prev" />
 
         <Button
             android:id="@+id/next"
@@ -47,6 +47,6 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_weight="50"
-            android:text="Suivant" />
+            android:text="Next" />
     </LinearLayout>
 </LinearLayout>
