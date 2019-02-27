@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public class evenementAdapter extends RecyclerView.Adapter<evenementAdapter.even
         holder.textViewPlace.setText(evenement.getPlace());
         holder.textViewDate.setText(evenement.getDate().substring(0,4)+"/"+evenement.getDate().substring(4,6)+"/"+evenement.getDate().substring(6,8));
         holder.textViewPhone.setText(evenement.getPhone());
+        holder.button.setContentDescription(evenement.getUserId());
 
 
     }
@@ -46,13 +48,14 @@ public class evenementAdapter extends RecyclerView.Adapter<evenementAdapter.even
 
     public class evenementViewHolder extends RecyclerView.ViewHolder{
         TextView textViewName,textViewPlace,textViewDate,textViewPhone;
-
+        Button button;
         public evenementViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewName=itemView.findViewById(R.id.txtNameEvent);
             textViewPlace=itemView.findViewById(R.id.txtPlaceEvent);
             textViewDate=itemView.findViewById(R.id.txtDateEvent);
             textViewPhone=itemView.findViewById(R.id.txtPhoneEvent);
+            button =itemView.findViewById(R.id.suscribe);
         }
     }
 }

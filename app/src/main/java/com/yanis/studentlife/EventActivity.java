@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,7 +45,7 @@ public class EventActivity extends SharedMainActivity {
                         if (task.isSuccessful()) {
                             List<evenement>list=new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone")));
+                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone"),document.getString("userID")));
                             }
                             adapter=new evenementAdapter(EventActivity.this,list);
                             recyclerView.setAdapter(adapter);
@@ -55,6 +56,11 @@ public class EventActivity extends SharedMainActivity {
                 });
     }
 
+    public void suscribe(View view){
+        Button button=(Button) findViewById(R.id.suscribe);
+        Log.i("TEST", "suscribe: "+ button.getContentDescription());
+        //TODO
+    }
     public void btn_plus_Click(View view){
         Intent i =new Intent(this,AddEventActivity.class);
         startActivity(i);

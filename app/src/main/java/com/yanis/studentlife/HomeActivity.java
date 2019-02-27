@@ -43,7 +43,7 @@ public class HomeActivity extends SharedMainActivity {
                         if (task.isSuccessful()) {
                             List<evenement>list=new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone")));
+                                list.add(new evenement(document.getString("name"),document.getString("address"),document.getString("date"),document.getString("phone"),document.getString("userID")));
                             }
                             adapter=new HomeAdapter(HomeActivity.this,list);
                             recyclerView.setAdapter(adapter);

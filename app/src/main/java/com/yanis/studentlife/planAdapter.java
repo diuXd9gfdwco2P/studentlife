@@ -23,7 +23,7 @@ public class planAdapter extends RecyclerView.Adapter<planAdapter.planViewHolder
     @Override
     public planAdapter.planViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater=LayoutInflater.from(ctx);
-        View view=inflater.inflate(R.layout.card,null);
+        View view=inflater.inflate(R.layout.card_offer_plan,null);
         return new planViewHolder(view);
     }
 
