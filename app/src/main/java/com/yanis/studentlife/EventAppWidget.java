@@ -55,7 +55,7 @@ public class EventAppWidget extends AppWidgetProvider {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.event_app_widget);
 
             views.setTextViewText(R.id.eventWidget, eventList.get(indice).getName());
-            views.setTextViewText(R.id.dateWidget, eventList.get(indice).getDate());
+            views.setTextViewText(R.id.dateWidget, eventList.get(indice).getDate().substring(0,4)+"/"+eventList.get(indice).getDate().substring(4,6)+"/"+eventList.get(indice).getDate().substring(6,8));
             Intent nextIntent = new Intent(context, EventAppWidget.class);
             nextIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
             nextIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
@@ -68,7 +68,7 @@ public class EventAppWidget extends AppWidgetProvider {
 
             Intent previousIntent = new Intent(context, EventAppWidget.class);
             previousIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-            previousIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetId);
+            previousIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
             previousIntent.putExtra(EXTRA_DIRECTION, EXTRA_PREVIOUS);
             previousIntent.putExtra(EXTRA_INDICE, indice);
             data = Uri.withAppendedPath(Uri.parse("WIDGET://widget/id/"), String.valueOf(R.id.previous));

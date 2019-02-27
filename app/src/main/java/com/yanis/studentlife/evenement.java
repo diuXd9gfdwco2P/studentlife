@@ -18,6 +18,13 @@ public class evenement {
         this.userId=userId;
     }
 
+    public evenement(String name, String place, String date, String phone) {
+        this.name = name;
+        this.place = place;
+        this.date = date;
+        this.phone = phone;
+    }
+
 
     public String getId() {
         return id;
