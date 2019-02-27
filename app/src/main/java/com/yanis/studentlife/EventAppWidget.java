@@ -53,7 +53,6 @@ public class EventAppWidget extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         for (int appWidgetId : appWidgetIds) {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.event_app_widget);
-
             views.setTextViewText(R.id.eventWidget, eventList.get(indice).getName());
             views.setTextViewText(R.id.dateWidget, eventList.get(indice).getDate().substring(0,4)+"/"+eventList.get(indice).getDate().substring(4,6)+"/"+eventList.get(indice).getDate().substring(6,8));
             Intent nextIntent = new Intent(context, EventAppWidget.class);
@@ -75,11 +74,8 @@ public class EventAppWidget extends AppWidgetProvider {
             previousIntent.setData(data);
             PendingIntent previousPending = PendingIntent.getBroadcast(context, 1, previousIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             views.setOnClickPendingIntent(R.id.previous, previousPending);
-
             // Et il faut mettre à jour toutes les vues
             appWidgetManager.updateAppWidget(appWidgetId, views);
-
-
         }
     }
 
@@ -90,7 +86,6 @@ public class EventAppWidget extends AppWidgetProvider {
         if(eventList.size() == 0) {
             DataBaseEventHelper localDb = new DataBaseEventHelper(context);
             Cursor res = localDb.getAllData();
-            StringBuffer buffer = new StringBuffer();
             while (res.moveToNext()) {
                 eventList.add(
                         new evenement(
@@ -118,52 +113,6 @@ public class EventAppWidget extends AppWidgetProvider {
         // On revient au traitement naturel du Receiver, qui va lancer onUpdate s'il y a demande de mise à jour
         super.onReceive(context, intent);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        super.onUpdate(context, appWidgetManager, appWidgetIds);
-        DataBaseEventHelper localDb = new DataBaseEventHelper(context);
-        RemoteViews remoteView = new RemoteViews(context.getPackageName(), R.id.event_app_widget);
-        Cursor res=localDb.getAllData();
-        if(res.getCount()==0){
-            remoteView.setTextViewText(R.id.eventWidget,"aucun évènement");
-        }
-        StringBuffer buffer = new StringBuffer();
-        while (res.moveToNext()) {
-            buffer.append("ID : " + res.getString(0) + "\n");
-            buffer.append("name : " + res.getString(1) + "\n");
-            buffer.append("Address : " + res.getString(2) + "\n");
-            buffer.append("Phone : " + res.getString(3) + "\n");
-            buffer.append("Date : " + res.getString(4) + "\n\n\n");
-        }
-        for(int i=0; i<appWidgetIds.length; i++) {
-
-        }
-
-
-    }
-*/
-
 
 }
 
